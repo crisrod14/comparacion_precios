@@ -18,6 +18,39 @@ from src.data_sources.excel_reader import read_excel_reference
 from src.comparator.price_comparator import compare_prices, to_distinct_by_sku
 from src.scraper.wom_api_client import fetch_products_from_api
 
+
+def update_config_with_excel_skus(excel_path: Path, config_path: Path):
+    """Actualiza config.yaml con SKUs nuevos del Excel."""
+    try:
+        # Leer SKUs del Excel
+        df = pd.read_excel(excel_path, sheet_name="Equipos")
+        excel_skus = set(df['SKU'].dropna().unique())
+        excel_skus = {str(s).strip() for s in excel_skus if s}
+
+        # Leer config actual
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+
+        existing_skus = set(
+            s.strip() for s in config['website']['api']['skus'].split(',') if s.strip()
+        )
+
+        # Encontrar nuevos SKUs
+        new_skus = excel_skus - existing_skus
+        if new_skus:
+            # Actualizar config
+            combined_skus = sorted(list(existing_skus | excel_skus))
+            config['website']['api']['skus'] = ','.join(combined_skus)
+
+            with open(config_path, 'w', encoding='utf-8') as f:
+                yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+
+            return len(new_skus)
+        return 0
+    except Exception as e:
+        st.warning(f"No se pudo actualizar config.yaml: {e}")
+        return 0
+
 USAGE_MD = """
 ### Dónde va el archivo
 
@@ -65,6 +98,16 @@ def run_comparison(excel_path: Path, config: dict) -> tuple[pd.DataFrame, dict]:
         estado_comercial=estado_comercial,
     )
     ref_df = ref_df[ref_df["modality"] != "accesorios"].copy()
+
+    # Actualizar config.yaml con SKUs nuevos del Excel
+    config_path = PROJECT_ROOT / "config" / "config.yaml"
+    new_skus_count = update_config_with_excel_skus(excel_path, config_path)
+    if new_skus_count > 0:
+        # Recargar config con los SKUs actualizados
+        with open(config_path, encoding="utf-8") as f:
+            config = yaml.safe_load(f)
+        api_cfg = config.get("website", {}).get("api", {})
+        api_skus = [s.strip() for s in str(api_cfg.get("skus", "")).split(",") if s.strip()]
 
     modalities = ["renovacion", "portabilidad", "linea_nueva", "prepago", "precio_normal"]
     web_df = fetch_products_from_api(
