@@ -6,7 +6,6 @@ from io import BytesIO
 from pathlib import Path
 import sys
 import tempfile
-from typing import Optional
 
 import pandas as pd
 import streamlit as st
@@ -16,41 +15,31 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.data_sources.excel_reader import read_excel_reference
-from src.data_sources.csv_reader import get_csv_accessories
 from src.comparator.price_comparator import compare_prices, to_distinct_by_sku
 from src.scraper.wom_api_client import fetch_products_from_api
 
 USAGE_MD = """
-### Cómo usar
+### Dónde va el archivo
 
-1. **📋 Equipos**: Sube tu Excel o CSV con equipos (SKU, Modelo, precios por modalidad)
-2. **🎧 Accesorios**: Sube tu Excel o CSV con accesorios (SKU, Modelo, Precio) — **opcional**
-3. Presiona **Ejecutar comparación**
+| Modo | Qué hacer |
+|------|-----------|
+| **Streamlit (esta página)** | Sube el Excel con el cuadro de abajo. No hace falta copiarlo a ninguna carpeta. |
+| **Flask (puerto 5000)** | Pon el archivo en la **carpeta raíz del proyecto** como `Precios depurados.xlsx` (o el nombre en `config.yaml` → `file_path`). |
 
-### Formato del archivo de Equipos
+### Formato del Excel
 
-Según `config/config.yaml`, debe tener:
-- **Columna SKU**
-- **Columna Modelo**
-- **Columnas de precio** (por modalidad: Portabilidad, Renovación, etc.)
-- **Columna Estado Comercial** (solo En Oferta y Lanzamiento se incluyen)
+Según `config/config.yaml`, el libro debe tener:
 
-Puedes subir `.xlsx`, `.xls` o `.csv` (con separador `;`)
+- **Hoja `Equipos`**: `SKU`, `Modelo`, `Estado Comercial` (solo filas **En Oferta** y **Lanzamiento**).
+- Columnas de precio: **Equipo con Portabilidad**, **Equipo en Renovacion**, **Equipo con Nuevo Numero**, **Prepago Exclusivo wom.cl**, **Precio Normal**, y los **% Descuento** si aplica.
 
-### Formato del archivo de Accesorios (opcional)
-
-- **SKU**: Identificador único
-- **Modelo**: Nombre del accesorio
-- **Precio**: Precio actual
-- **Precio Normal** (opcional): Precio sin descuento
-- **% Descuento** (opcional): Porcentaje de descuento
+Si cambian los nombres de columnas, edita `data_source.excel.sheets` en `config.yaml`.
 
 ### Qué hace la app
 
-1. Lee equipos y accesorios (si los cargas)
-2. Consulta la API de WOM
-3. Compara precios y muestra discrepancias
-4. Descarga los resultados en Excel
+1. Lee tus precios del Excel.
+2. Consulta la API de WOM (lista de SKUs en `website.api.skus`).
+3. Compara y muestra el resultado.
 """
 
 
@@ -62,7 +51,7 @@ def get_config():
     return {}
 
 
-def run_comparison(excel_path: Path, config: dict, accessories_path: Optional[Path] = None) -> tuple[pd.DataFrame, dict]:
+def run_comparison(excel_path: Path, config: dict) -> tuple[pd.DataFrame, dict]:
     excel_cfg = config.get("data_source", {}).get("excel", {})
     sheet_configs = excel_cfg.get("sheets")
     estado_comercial = excel_cfg.get("estado_comercial")
@@ -75,12 +64,7 @@ def run_comparison(excel_path: Path, config: dict, accessories_path: Optional[Pa
         sheet_configs=sheet_configs,
         estado_comercial=estado_comercial,
     )
-
-    # Agregar accesorios si se cargaron (solo referencia, no se consultan en API)
-    if accessories_path and accessories_path.exists():
-        csv_accesorios = get_csv_accessories(accessories_path)
-        if not csv_accesorios.empty:
-            ref_df = pd.concat([ref_df, csv_accesorios], ignore_index=True)
+    ref_df = ref_df[ref_df["modality"] != "accesorios"].copy()
 
     modalities = ["renovacion", "portabilidad", "linea_nueva", "prepago", "precio_normal"]
     web_df = fetch_products_from_api(
@@ -92,7 +76,6 @@ def run_comparison(excel_path: Path, config: dict, accessories_path: Optional[Pa
         batch_size=int(api_cfg.get("batch_size", 10)),
         retries=int(api_cfg.get("retries", 5)),
     )
-
     subset = (
         ["sku", "modality"]
         if "sku" in web_df.columns and web_df["sku"].notna().any()
@@ -144,27 +127,15 @@ def main():
         st.error("Falta `config/config.yaml` en el proyecto.")
         return
 
-    col_equip, col_acces = st.columns([1, 1])
-
-    with col_equip:
-        uploaded_equipos = st.file_uploader(
-            "1️⃣ Sube Equipos (.xlsx, .csv)",
-            type=["xlsx", "xls", "csv"],
-            key="equipos_uploader",
-            help="Excel o CSV con SKU, Modelo y columnas por modalidad",
-        )
-
-    with col_acces:
-        uploaded_accesorios = st.file_uploader(
-            "2️⃣ Sube Accesorios (.xlsx, .csv)",
-            type=["xlsx", "xls", "csv"],
-            key="accesorios_uploader",
-            help="Excel o CSV con SKU, Modelo, Precio (opcional para incluir accesorios)",
-        )
+    uploaded = st.file_uploader(
+        "1. Sube tu Excel de precios (.xlsx)",
+        type=["xlsx", "xls"],
+        help="Misma estructura que Precios depurados: hoja Equipos con SKU, Modelo y columnas por modalidad",
+    )
 
     col1, col2 = st.columns([1, 1])
     with col1:
-        run_clicked = st.button("🚀 3. Ejecutar comparación", type="primary", use_container_width=True)
+        run_clicked = st.button("🚀 2. Ejecutar comparación", type="primary", use_container_width=True)
     with col2:
         if st.button("🗑️ Limpiar resultados", use_container_width=True):
             st.session_state.comparison_results = None
@@ -173,36 +144,24 @@ def main():
             st.rerun()
 
     if run_clicked:
-        if not uploaded_equipos:
-            st.session_state.comparison_error = "Primero sube un archivo de Equipos."
+        if not uploaded:
+            st.session_state.comparison_error = "Primero sube un archivo Excel."
             st.session_state.comparison_results = None
             st.session_state.comparison_stats = None
         else:
             st.session_state.comparison_error = None
+            suffix = ".xlsx" if uploaded.name.lower().endswith(".xlsx") else ".xls"
             try:
-                # Procesar equipos
-                suffix_equip = ".xlsx" if uploaded_equipos.name.lower().endswith(".xlsx") else (".xls" if uploaded_equipos.name.lower().endswith(".xls") else ".csv")
-                with tempfile.NamedTemporaryFile(delete=False, suffix=suffix_equip) as tmp_equip:
-                    tmp_equip.write(uploaded_equipos.getvalue())
-                    equipos_path = Path(tmp_equip.name)
-
-                # Procesar accesorios (si se cargaron)
-                accesorios_path = None
-                if uploaded_accesorios:
-                    suffix_acces = ".xlsx" if uploaded_accesorios.name.lower().endswith(".xlsx") else (".xls" if uploaded_accesorios.name.lower().endswith(".xls") else ".csv")
-                    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix_acces) as tmp_acces:
-                        tmp_acces.write(uploaded_accesorios.getvalue())
-                        accesorios_path = Path(tmp_acces.name)
-
+                with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
+                    tmp.write(uploaded.getvalue())
+                    excel_path = Path(tmp.name)
                 try:
-                    with st.spinner("Consultando API de WOM y comparando con tus archivos…"):
-                        results_df, stats = run_comparison(equipos_path, config, accessories_path=accesorios_path)
+                    with st.spinner("Consultando API de WOM y comparando con tu Excel…"):
+                        results_df, stats = run_comparison(excel_path, config)
                     st.session_state.comparison_results = results_df
                     st.session_state.comparison_stats = stats
                 finally:
-                    equipos_path.unlink(missing_ok=True)
-                    if accesorios_path:
-                        accesorios_path.unlink(missing_ok=True)
+                    excel_path.unlink(missing_ok=True)
             except Exception as e:
                 st.session_state.comparison_results = None
                 st.session_state.comparison_stats = None
@@ -246,7 +205,7 @@ def main():
             use_container_width=True,
         )
     elif st.session_state.comparison_results is None:
-        if uploaded_equipos is None:
+        if uploaded is None:
             st.info("👆 Sube tu Excel y pulsa **Ejecutar comparación**.")
         elif not st.session_state.comparison_error:
             st.info("Excel cargado. Pulsa **Ejecutar comparación**.")
