@@ -99,6 +99,11 @@ def run_comparison(excel_path: Path, config: dict) -> tuple[pd.DataFrame, dict]:
     )
     ref_df = ref_df[ref_df["modality"] != "accesorios"].copy()
 
+    # Filtrar solo SKUs con formato XXX.XXX.XXXX
+    import re
+    sku_pattern = r'^\d{3}\.\d{3}\.\d{4}$'
+    ref_df = ref_df[ref_df['sku'].astype(str).str.match(sku_pattern)].copy()
+
     # Actualizar config.yaml con SKUs nuevos del Excel
     config_path = PROJECT_ROOT / "config" / "config.yaml"
     new_skus_count = update_config_with_excel_skus(excel_path, config_path)
