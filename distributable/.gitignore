@@ -1,0 +1,23 @@
+# PyInstaller files
+build/
+dist/
+*.spec
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archivos compilados
+*.exe
+*.zip

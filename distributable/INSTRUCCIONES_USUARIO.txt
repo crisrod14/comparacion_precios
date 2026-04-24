@@ -1,0 +1,57 @@
+╔════════════════════════════════════════════════════════════════╗
+║       INSTRUCCIONES PARA USAR WOM PRECIOS - Ejecutable        ║
+╚════════════════════════════════════════════════════════════════╝
+
+📋 REQUISITOS:
+  • Windows 7 o superior
+  • Conexión a Internet
+  • Nada más (Python NO es necesario)
+
+🚀 CÓMO USAR:
+
+  1. Descarga el archivo: WOM_Precios.exe
+
+  2. Haz DOBLE CLICK en WOM_Precios.exe
+
+  3. Espera a que se abra tu navegador (5-10 segundos)
+
+  4. ¡Listo! Ya puedes usar la app
+
+⚠️  IMPORTANTE:
+
+  • NO elimines el archivo WOM_Precios.exe
+  • Puedes crear un ACCESO DIRECTO en el escritorio
+    (click derecho → Enviar a → Escritorio (crear acceso directo))
+  • Si le das Ctrl+C en la consola, se cierra la app
+
+❓ PREGUNTAS FRECUENTES:
+
+  P: ¿Por qué tarda en abrirse?
+  R: La primera vez descarga datos. Las siguientes será más rápido.
+
+  P: ¿Dice que es "desconocida" o "potencialmente peligrosa"?
+  R: Es una falsa alarma. El antivirus avisa de ejecutables desconocidos.
+     Haz click en "Más información" y luego "Ejecutar de todas formas"
+
+  P: ¿Puedo cambiar de carpeta el archivo?
+  R: Sí, puedes moverlo donde quieras. Funciona igual.
+
+  P: ¿Necesito Python?
+  R: No, Python ya está incluido en el ejecutable.
+
+  P: ¿Puedo compartirlo con otros?
+  R: Sí, puedes enviar el WOM_Precios.exe a quien quieras.
+
+═════════════════════════════════════════════════════════════════
+
+¿PROBLEMAS?
+
+Si no funciona, intenta:
+  1. Reinicia tu computadora
+  2. Desactiva temporalmente el antivirus
+  3. Descarga de nuevo el archivo
+  4. Ejecuta como Administrador (click derecho → Ejecutar como...)
+
+═════════════════════════════════════════════════════════════════
+
+¡Cualquier duda, avisa! 😊

@@ -1,0 +1,98 @@
+website:
+  name: "WOM Store"
+  base_url: "https://store.wom.cl"
+  # Equipos: precios por modalidad (cada URL muestra precios distintos)
+  equipos_modalities:
+    - id: "portabilidad"
+      name: "Equipo con Portabilidad"
+      url: "/equipos/portabilidad"
+    - id: "renovacion"
+      name: "Equipo en Renovación"
+      url: "/equipos/renovacion"
+    - id: "linea_nueva"
+      name: "Equipo con Nuevo Número"
+      url: "/equipos/linea-nueva"
+    - id: "prepago"
+      name: "Prepago Exclusivo wom.cl"
+      url: "/equipos/prepago"
+    # precio_normal: no se scrapea URL. Viene del precio tachado en cada PLP,
+    # o del precio grande cuando no hay descuento (sin tachado, no "Sin precio")
+    - id: "precio_normal"
+      name: "Precio Normal"
+      url: ""  # vacío = se deriva de los datos ya scrapeados
+  categories:
+    - name: "Accesorios"
+      url: "/accesorios/"
+
+  api:
+    base_url: "https://store-srv.wom.cl/rest/V1/content"
+    # SKUs (parent_sku) desde la petición getGraphqlDataFromSkus al cargar la PLP.
+    # Puedes copiarlos desde DevTools > Network al cargar /equipos/renovacion
+    skus: "A3517-512GB,Z2474,X6730B,KL8,XT2433-2-256GB,25078RA3EL128GB,XT2535-2,NLA-LX3,15C256GB,25098RA98G,BRP-NX3,25069PTEBG,A3520,XT2529-1,2510ERA8BG,LGN-NX3,A3526,XT2503-1,25057RN09G,A3523,MTN-NX3,25080RABDG,24129PN74G,25028RN03L,24090RA29G,A3090-128GB,A3523-512GB,A3409,25078RA3EL,A3517,24115RA8EG,ALT-NX3,DNY-NX9,24094RAD4G,XT2527-6,A3526-512GB,ABR-NX3,Z2464N,A3287,X6857,2506BPN68G,001.007.0222,001.007.0284,001.007.0285,001.007.0221,001.012.1474,001.007.0332,001.007.0113,001.007.0115,001.007.0224,001.007.0225,001.007.0223,001.007.0139,001.007.0377,001.007.0378,001.007.0252,001.007.0179,001.007.0161,001.007.0312,001.007.0133,001.007.0352,001.007.0216,001.007.0218,001.007.0324,001.007.0306,001.007.0380,001.007.0219,001.007.0286,001.007.0379,001.007.0091,001.012.1481,001.007.0186,001.007.0390,001.007.0313,001.007.0367,001.007.0291,001.007.0292,001.007.0374,001.007.0368,001.007.0168,001.007.0118,001.012.1476,001.007.0053,001.012.1458,001.007.0022,001.007.0376,001.012.1472,001.007.0392,001.007.0391,001.012.1482,001.007.0244,001.007.0245,001.007.0246,001.007.0290,001.007.0185,001.007.0302,001.007.0304,001.007.0305,001.007.0303,001.007.0394,001.007.0395,001.007.0396,001.007.0397,001.007.0208,001.007.0207,001.007.0314,001.007.0327,001.007.0328,001.007.0355,001.007.0268,001.007.0273,001.007.0274,001.007.0183,001.007.0132,001.007.0263,001.007.0217,001.007.0190,001.007.0191,001.007.0069,001.007.0041,001.007.0393,001.007.0297,001.007.0360,001.007.0361,001.007.0298,001.007.0317,001.007.0366,001.007.0365,001.007.0318,001.007.0364,001.007.0363,001.007.0362,001.007.0308,001.007.0309,001.007.0325,001.007.0369,001.007.0289,001.007.0248,001.007.0293,001.007.0017,001.007.0081,001.007.0083,001.007.0195,001.012.1465,001.007.0337,001.007.0336,001.012.1480,001.007.0144,001.007.0172,001.007.0333,001.007.0335,001.007.0188,001.007.0096,001.007.0351,001.007.0350,001.007.0342,001.007.0095,001.012.1473,001.007.0196,001.007.0197,001.007.0340,001.007.0341,001.007.0078,001.007.0003,001.007.0004,001.007.0005,001.004.0003,001.007.0315,001.007.0334,001.007.0330,001.007.0331,001.007.0385,001.007.0383,001.007.0384,001.007.0382,001.007.0343,001.007.0344,001.007.0345,001.007.0353,001.007.0346,001.007.0354,001.007.0214,001.007.0215,001.007.0052,001.007.0347,001.007.0275,001.007.0373,001.007.0189,001.007.0148,001.007.0158,001.007.0356,001.007.0295,001.007.0387,001.007.0388,001.007.0370,001.007.0294,001.007.0386,001.007.0296,001.007.0319,001.007.0193,001.007.0348,001.007.0181,001.007.0107,001.007.0111,001.007.0320,001.007.0166,001.007.0165,001.007.0321,001.007.0357,001.007.0371,001.007.0375,001.007.0398,001.007.0399,001.007.0400,001.007.0401,001.007.0402,001.007.0389,001.007.0323,001.007.0329,001.007.0372,001.007.0322,001.007.0300,001.007.0198,001.007.0199,001.007.0157,001.007.0156,001.007.0192,001.007.0358,001.007.0359,001.007.0149,001.007.0283,001.007.0203"
+    # Si ves ConnectTimeout: red lenta / firewall. Sube retries, baja batch_size o prueba otra red.
+    batch_size: 10
+    retries: 5
+    connect_timeout: 90
+    read_timeout: 180
+
+  scraping:
+    method: "api"  # "api" = usar getGraphqlDataFromSkus, "playwright" = DOM
+    timeout: 30000
+    headless: true
+    delay_between_requests: 2
+
+  selectors:
+    product_list:
+      container: "article.product-card, .product-item, [class*='product']"
+      name: "h3, .product-title, .product-name"
+      price: ".price, .product-price, [class*='price']"
+      link: "a[href*='/equipos/'], a[href*='/accesorios/']"
+    product_detail:
+      name: "h1, .product-title"
+      price: ".price, .final-price, [class*='precio']"
+      sku: ".sku, .product-code, [data-sku]"
+
+data_source:
+  type: "excel"
+  excel:
+    file_path: "Precios depurados.xlsx"
+    # Estado Comercial: solo incluir estos 2 estados. "End of Life" y otros se excluyen.
+    estado_comercial:
+      column: "Estado Comercial"
+      include: ["En Oferta", "Lanzamiento"]
+    # Hojas Equipos (precios por modalidad) y Accesorios
+    sheets:
+      - sheet: "Equipos"
+        sku: "SKU"
+        name: "Modelo"
+        modalities:
+          # precio = precio con descuento, descuento = % DCTO de esa modalidad
+          - excel_column: "Equipo con Portabilidad"
+            excel_column_descuento: "% Descuento"
+            id: "portabilidad"
+          - excel_column: "Equipo en Renovacion"
+            excel_column_descuento: "% Descuento.1"
+            id: "renovacion"
+          - excel_column: "Equipo con Nuevo Numero"
+            excel_column_descuento: "% Descuento.2"
+            id: "linea_nueva"
+          - excel_column: "Prepago Exclusivo wom.cl"
+            excel_column_descuento: "% Descuento.3"
+            id: "prepago"
+          - excel_column: "Precio Normal"
+            id: "precio_normal"
+      - sheet: "Accesorios"
+        sku: "SKU"
+        name: "Modelo"
+        price: "Precio de Venta"
+
+comparison:
+  tolerance_percent: 1.0
+  match_by: ["sku", "name_fuzzy"]
+  report_missing: true
+
+scheduler:
+  enabled: false
+  frequency: "daily"
+  time: "08:00"
+  timezone: "America/Santiago"
