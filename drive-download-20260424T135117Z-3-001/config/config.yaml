@@ -1,0 +1,98 @@
+website:
+  name: "WOM Store"
+  base_url: "https://store.wom.cl"
+  # Equipos: precios por modalidad (cada URL muestra precios distintos)
+  equipos_modalities:
+    - id: "portabilidad"
+      name: "Equipo con Portabilidad"
+      url: "/equipos/portabilidad"
+    - id: "renovacion"
+      name: "Equipo en Renovación"
+      url: "/equipos/renovacion"
+    - id: "linea_nueva"
+      name: "Equipo con Nuevo Número"
+      url: "/equipos/linea-nueva"
+    - id: "prepago"
+      name: "Prepago Exclusivo wom.cl"
+      url: "/equipos/prepago"
+    # precio_normal: no se scrapea URL. Viene del precio tachado en cada PLP,
+    # o del precio grande cuando no hay descuento (sin tachado, no "Sin precio")
+    - id: "precio_normal"
+      name: "Precio Normal"
+      url: ""  # vacío = se deriva de los datos ya scrapeados
+  categories:
+    - name: "Accesorios"
+      url: "/accesorios/"
+
+  api:
+    base_url: "https://store-srv.wom.cl/rest/V1/content"
+    # SKUs (parent_sku) desde la petición getGraphqlDataFromSkus al cargar la PLP.
+    # Puedes copiarlos desde DevTools > Network al cargar /equipos/renovacion
+    skus: "A3517-512GB,Z2474,X6730B,KL8,XT2433-2-256GB,25078RA3EL128GB,XT2535-2,NLA-LX3,15C256GB,25098RA98G,BRP-NX3,25069PTEBG,A3520,XT2529-1,2510ERA8BG,LGN-NX3,A3526,XT2503-1,25057RN09G,A3523,MTN-NX3,25080RABDG,24129PN74G,25028RN03L,24090RA29G,A3090-128GB,A3523-512GB,A3409,25078RA3EL,A3517,24115RA8EG,ALT-NX3,DNY-NX9,24094RAD4G,XT2527-6,A3526-512GB,ABR-NX3,Z2464N,A3287,X6857,2506BPN68G"
+    # Si ves ConnectTimeout: red lenta / firewall. Sube retries, baja batch_size o prueba otra red.
+    batch_size: 10
+    retries: 5
+    connect_timeout: 90
+    read_timeout: 180
+
+  scraping:
+    method: "api"  # "api" = usar getGraphqlDataFromSkus, "playwright" = DOM
+    timeout: 30000
+    headless: true
+    delay_between_requests: 2
+
+  selectors:
+    product_list:
+      container: "article.product-card, .product-item, [class*='product']"
+      name: "h3, .product-title, .product-name"
+      price: ".price, .product-price, [class*='price']"
+      link: "a[href*='/equipos/'], a[href*='/accesorios/']"
+    product_detail:
+      name: "h1, .product-title"
+      price: ".price, .final-price, [class*='precio']"
+      sku: ".sku, .product-code, [data-sku]"
+
+data_source:
+  type: "excel"
+  excel:
+    file_path: "Precios depurados.xlsx"
+    # Estado Comercial: solo incluir estos 2 estados. "End of Life" y otros se excluyen.
+    estado_comercial:
+      column: "Estado Comercial"
+      include: ["En Oferta", "Lanzamiento"]
+    # Hojas Equipos (precios por modalidad) y Accesorios
+    sheets:
+      - sheet: "Equipos"
+        sku: "SKU"
+        name: "Modelo"
+        modalities:
+          # precio = precio con descuento, descuento = % DCTO de esa modalidad
+          - excel_column: "Equipo con Portabilidad"
+            excel_column_descuento: "% Descuento"
+            id: "portabilidad"
+          - excel_column: "Equipo en Renovacion"
+            excel_column_descuento: "% Descuento.1"
+            id: "renovacion"
+          - excel_column: "Equipo con Nuevo Numero"
+            excel_column_descuento: "% Descuento.2"
+            id: "linea_nueva"
+          - excel_column: "Prepago Exclusivo wom.cl"
+            excel_column_descuento: "% Descuento.3"
+            id: "prepago"
+          - excel_column: "Precio Normal"
+            id: "precio_normal"
+      - sheet: "Accesorios"
+        sku: "SKU"
+        name: "Modelo"
+        price: "Precio de Venta"
+
+comparison:
+  tolerance_percent: 1.0
+  match_by: ["sku", "name_fuzzy"]
+  report_missing: true
+
+scheduler:
+  enabled: false
+  frequency: "daily"
+  time: "08:00"
+  timezone: "America/Santiago"

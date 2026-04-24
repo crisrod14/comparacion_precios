@@ -1,0 +1,2050 @@
+[
+  {
+    "childs": [
+      {
+        "child_sku": "001.002.2486",
+        "parent_sku": "A3090-128GB",
+        "graphql_data": {
+          "color": "Negro",
+          "storage": "128 GB",
+          "price": 999990,
+          "graphql_data": {
+            "id": "652e06794d38203eecfc5f24",
+            "name": "Apple iPhone 15 5G 128GB Negro",
+            "offerCode": "001.002.2486",
+            "lastUpdate": "2026-02-10T04:02:45.953Z",
+            "productOfferingPrice": {
+              "renew": {
+                "id": "6981736bdbbbdc4b994f1da1",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "renew",
+                "includesInstallmentPlan": true,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aade5c3d60204b846ccb9",
+                    "priceType": "salesInitialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 429990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aade5dbbbdc4b994f2a2a",
+                    "priceType": "salesInstallmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aade5c3d60204b846ccbc",
+                    "priceType": "initialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 579990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aade5dbbbdc4b994f2a2c",
+                    "priceType": "installmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aade5c3d60204b846ccbd",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 999990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aade5dbbbdc4b994f2a2d",
+                    "priceType": "salesPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 712800,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              },
+              "portIn": {
+                "id": "6981736bc3d60204b846bf6d",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "portIn",
+                "includesInstallmentPlan": true,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aade5c3d60204b846ccb8",
+                    "priceType": "initialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 429990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aade5dbbbdc4b994f2a28",
+                    "priceType": "installmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aade5c3d60204b846ccbb",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 712800,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              },
+              "newConnection": {
+                "id": "6981736bdbbbdc4b994f1d9f",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "newConnection",
+                "includesInstallmentPlan": true,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aade5c3d60204b846ccba",
+                    "priceType": "initialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 579990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aade5dbbbdc4b994f2a29",
+                    "priceType": "installmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aade5dbbbdc4b994f2a2b",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 712800,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              },
+              "standard": {
+                "id": "65d4233c329a806f0f365075",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "standard",
+                "includesInstallmentPlan": false,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aade5dbbbdc4b994f2a21",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 772800,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              }
+            },
+            "productSpecification": {
+              "_type": "WOMCLGoodsProductSpecification",
+              "href": null,
+              "id": "652e051093a620666eac93ee",
+              "name": "Apple iPhone 15 5G 128GB Negro",
+              "productNumber": "001.002.2486",
+              "productSpecCharacteristic": [
+                {
+                  "name": "categoria",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Equipos"
+                    }
+                  ]
+                },
+                {
+                  "name": "subcategoria",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Equipos"
+                    }
+                  ]
+                },
+                {
+                  "name": "meta_title",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Negro"
+                    }
+                  ]
+                },
+                {
+                  "name": "meta_keywords",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Negro"
+                    }
+                  ]
+                },
+                {
+                  "name": "meta_description",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Negro"
+                    }
+                  ]
+                },
+                {
+                  "name": "visibility",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Not Visible Individually"
+                    }
+                  ]
+                },
+                {
+                  "name": "price",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "999990"
+                    }
+                  ]
+                },
+                {
+                  "name": "name",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Negro"
+                    }
+                  ]
+                },
+                {
+                  "name": "product_type",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "simple"
+                    }
+                  ]
+                },
+                {
+                  "name": "almacenamiento_externo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "No Disponible"
+                    }
+                  ]
+                },
+                {
+                  "name": "bluetooth",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "5.3"
+                    }
+                  ]
+                },
+                {
+                  "name": "camara_frontal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "camara_principal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "48 + 12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "capacidad_almacenamiento",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "128 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "color",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Negro"
+                    }
+                  ]
+                },
+                {
+                  "name": "destacados",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "No"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_almacenamiento",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "128 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_camara_frontal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_camara_principal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "48 + 12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "pantalla",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6.1\""
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_procesador",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "A16 Bionic"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_ram",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "standby_time",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Hasta 20 Horas"
+                    }
+                  ]
+                },
+                {
+                  "name": "duracion_reposo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Hasta 288 Horas"
+                    }
+                  ]
+                },
+                {
+                  "name": "flash",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Disponible en cámara principal"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_2g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "850 / 900 / 1800 / 1900 MHz"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_3g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "850 / 900 / 1700(AWS) / 1900 / 2100 MHz"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_4g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Banda 1(2100), 2(1900), 3(1800), 4(AWS), 5(850), 7(2600), 8(900), 12(700), 13(700), 17(700), 18(800), 19(800), 20(800), 25(1900), 26(850), 28(700), 30(2300), 32(1500), 66(AWS) (MHz)"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_5g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Bandas n1 (2100 MHz), n2(1900 MHz), n3 (1800 MHz), n5 (850 MHz), n7 (2600 MHz), n8 (900 MHz), n12 (700 MHz), n20 (800 MHz), n25 (1900+ MHz), n28 (700 MHz), n30 (2300 MHz), n38 (2600 MHz), n40 (2300 MHz), n41 (2600+ MHz), n48 (3.6 GHz),  n66 (AWS-3 1.7/2.1 GHz),n77 (3.7 GHz),  n78 (3.5 GHz), n79 (4.7 GHz)"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_sen_5g_nsa",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "DC_7A_n78A, DC_7A_n28A, DC_4A_n78A, DC_7A_n66A, DC_28A_n78A, DC_66A_n78A, DC_66A-66A_n78A"
+                    }
+                  ]
+                },
+                {
+                  "name": "gift_wrapping_available",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "No"
+                    }
+                  ]
+                },
+                {
+                  "name": "gps",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Yes"
+                    }
+                  ]
+                },
+                {
+                  "name": "grabacion_video",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "4k Ultra HD"
+                    }
+                  ]
+                },
+                {
+                  "name": "hotspot_tethering",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "vía USB - WiFi"
+                    }
+                  ]
+                },
+                {
+                  "name": "marca",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple"
+                    }
+                  ]
+                },
+                {
+                  "name": "memoria_ram",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "peso_final",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "171 g"
+                    }
+                  ]
+                },
+                {
+                  "name": "procesador",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "A16 Bionic - CPU 6 Core - GPU 5 Core - Neuronal Engine 16 Core"
+                    }
+                  ]
+                },
+                {
+                  "name": "product_stock_alert",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Enable"
+                    }
+                  ]
+                },
+                {
+                  "name": "resolucion",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1179 x 2556 Pixeles"
+                    }
+                  ]
+                },
+                {
+                  "name": "sar_cabeza",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1.12 W/Kg"
+                    }
+                  ]
+                },
+                {
+                  "name": "sar_cuerpo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1.14 W/Kg"
+                    }
+                  ]
+                },
+                {
+                  "name": "sinc_carga",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "USB Tipo C"
+                    }
+                  ]
+                },
+                {
+                  "name": "operating_system",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "iOS 17"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_camara",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "48 + 12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_equipo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "147.6 x 71.6 x 7.8 mm"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_pantalla",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6.1 Pulgadas"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_pantalla_final",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6.1 Pulgadas"
+                    }
+                  ]
+                },
+                {
+                  "name": "tipo_bateria",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "3349 mAh"
+                    }
+                  ]
+                },
+                {
+                  "name": "tipo_pantalla",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Super Retina XDR OLED"
+                    }
+                  ]
+                },
+                {
+                  "name": "tipo_sim",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1 Nano simcard (4ff) o 1 eSIM + 1 Nano simcard (4ff)"
+                    }
+                  ]
+                },
+                {
+                  "name": "ts_country_of_origin",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "China"
+                    }
+                  ]
+                },
+                {
+                  "name": "ts_packaging_type",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "None"
+                    }
+                  ]
+                },
+                {
+                  "name": "voz_4g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Soportado"
+                    }
+                  ]
+                },
+                {
+                  "name": "voz_wifi",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Soportado"
+                    }
+                  ]
+                },
+                {
+                  "name": "wifi",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "WiFi 6 - 802.11 a/b/g/n/ac/ax(6) (2.4GHz + 5GHz)"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_plp",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "dest_pantalla|dest_ram|dest_almacenamiento"
+                    }
+                  ]
+                },
+                {
+                  "name": "slogan_cuotas",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "*Hasta 24 cuotas sin interés con tu Tarjeta de Crédito"
+                    }
+                  ]
+                },
+                {
+                  "name": "campaign",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "no"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "child_sku": "001.002.2487",
+        "parent_sku": "A3090-128GB",
+        "graphql_data": {
+          "color": "Rosa",
+          "storage": "128 GB",
+          "price": 999990,
+          "graphql_data": {
+            "id": "652e067a93a620666eac9419",
+            "name": "Apple iPhone 15 5G 128GB Rosa",
+            "offerCode": "001.002.2487",
+            "lastUpdate": "2026-02-10T04:00:53.87Z",
+            "productOfferingPrice": {
+              "renew": {
+                "id": "698172efc3d60204b846bcf1",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "renew",
+                "includesInstallmentPlan": true,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aad75dbbbdc4b994f294c",
+                    "priceType": "salesInitialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 429990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aad75c3d60204b846cbd9",
+                    "priceType": "salesInstallmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aad75dbbbdc4b994f294e",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 999990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aad75dbbbdc4b994f294f",
+                    "priceType": "salesPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 712800,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aad75c3d60204b846cbdc",
+                    "priceType": "initialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 579990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aad75dbbbdc4b994f2950",
+                    "priceType": "installmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              },
+              "portIn": {
+                "id": "698172efdbbbdc4b994f1b22",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "portIn",
+                "includesInstallmentPlan": true,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aad75c3d60204b846cbd7",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 712800,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aad75dbbbdc4b994f294d",
+                    "priceType": "initialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 429990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aad75c3d60204b846cbda",
+                    "priceType": "installmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              },
+              "newConnection": {
+                "id": "698172efc3d60204b846bcef",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "newConnection",
+                "includesInstallmentPlan": true,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aad75dbbbdc4b994f294b",
+                    "priceType": "initialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 579990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aad75c3d60204b846cbd8",
+                    "priceType": "installmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aad75c3d60204b846cbdb",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 712800,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              },
+              "standard": {
+                "id": "65d4233d7533767eac733ddc",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "standard",
+                "includesInstallmentPlan": false,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aad75dbbbdc4b994f2944",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 772800,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              }
+            },
+            "productSpecification": {
+              "_type": "WOMCLGoodsProductSpecification",
+              "href": null,
+              "id": "652e051136210178ecd0a3e8",
+              "name": "Apple iPhone 15 5G 128GB Rosa",
+              "productNumber": "001.002.2487",
+              "productSpecCharacteristic": [
+                {
+                  "name": "categoria",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Equipos"
+                    }
+                  ]
+                },
+                {
+                  "name": "subcategoria",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Equipos"
+                    }
+                  ]
+                },
+                {
+                  "name": "meta_title",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Rosa"
+                    }
+                  ]
+                },
+                {
+                  "name": "meta_keywords",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Rosa"
+                    }
+                  ]
+                },
+                {
+                  "name": "meta_description",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Rosa"
+                    }
+                  ]
+                },
+                {
+                  "name": "visibility",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Not Visible Individually"
+                    }
+                  ]
+                },
+                {
+                  "name": "price",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "999990"
+                    }
+                  ]
+                },
+                {
+                  "name": "name",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Rosa"
+                    }
+                  ]
+                },
+                {
+                  "name": "product_type",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "simple"
+                    }
+                  ]
+                },
+                {
+                  "name": "almacenamiento_externo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "No Disponible"
+                    }
+                  ]
+                },
+                {
+                  "name": "bluetooth",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "5.3"
+                    }
+                  ]
+                },
+                {
+                  "name": "camara_frontal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "camara_principal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "48 + 12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "capacidad_almacenamiento",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "128 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "color",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Rosa"
+                    }
+                  ]
+                },
+                {
+                  "name": "destacados",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "No"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_almacenamiento",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "128 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_camara_frontal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_camara_principal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "48 + 12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "pantalla",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6.1\""
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_procesador",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "A16 Bionic"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_ram",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "standby_time",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Hasta 20 Horas"
+                    }
+                  ]
+                },
+                {
+                  "name": "duracion_reposo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Hasta 288 Horas"
+                    }
+                  ]
+                },
+                {
+                  "name": "flash",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Disponible en cámara principal"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_2g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "850 / 900 / 1800 / 1900 MHz"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_3g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "850 / 900 / 1700(AWS) / 1900 / 2100 MHz"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_4g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Banda 1(2100), 2(1900), 3(1800), 4(AWS), 5(850), 7(2600), 8(900), 12(700), 13(700), 17(700), 18(800), 19(800), 20(800), 25(1900), 26(850), 28(700), 30(2300), 32(1500), 66(AWS) (MHz)"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_5g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Bandas n1 (2100 MHz), n2(1900 MHz), n3 (1800 MHz), n5 (850 MHz), n7 (2600 MHz), n8 (900 MHz), n12 (700 MHz), n20 (800 MHz), n25 (1900+ MHz), n28 (700 MHz), n30 (2300 MHz), n38 (2600 MHz), n40 (2300 MHz), n41 (2600+ MHz), n48 (3.6 GHz),  n66 (AWS-3 1.7/2.1 GHz),n77 (3.7 GHz),  n78 (3.5 GHz), n79 (4.7 GHz)"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_sen_5g_nsa",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "DC_7A_n78A, DC_7A_n28A, DC_4A_n78A, DC_7A_n66A, DC_28A_n78A, DC_66A_n78A, DC_66A-66A_n78A"
+                    }
+                  ]
+                },
+                {
+                  "name": "gift_wrapping_available",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "No"
+                    }
+                  ]
+                },
+                {
+                  "name": "gps",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Yes"
+                    }
+                  ]
+                },
+                {
+                  "name": "grabacion_video",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "4k Ultra HD"
+                    }
+                  ]
+                },
+                {
+                  "name": "hotspot_tethering",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "vía USB - WiFi"
+                    }
+                  ]
+                },
+                {
+                  "name": "marca",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple"
+                    }
+                  ]
+                },
+                {
+                  "name": "memoria_ram",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "peso_final",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "171 g"
+                    }
+                  ]
+                },
+                {
+                  "name": "procesador",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "A16 Bionic - CPU 6 Core - GPU 5 Core - Neuronal Engine 16 Core"
+                    }
+                  ]
+                },
+                {
+                  "name": "product_stock_alert",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Enable"
+                    }
+                  ]
+                },
+                {
+                  "name": "resolucion",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1179 x 2556 Pixeles"
+                    }
+                  ]
+                },
+                {
+                  "name": "sar_cabeza",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1.12 W/Kg"
+                    }
+                  ]
+                },
+                {
+                  "name": "sar_cuerpo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1.14 W/Kg"
+                    }
+                  ]
+                },
+                {
+                  "name": "sinc_carga",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "USB Tipo C"
+                    }
+                  ]
+                },
+                {
+                  "name": "operating_system",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "iOS 17"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_camara",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "48 + 12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_equipo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "147.6 x 71.6 x 7.8 mm"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_pantalla",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6.1 Pulgadas"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_pantalla_final",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6.1 Pulgadas"
+                    }
+                  ]
+                },
+                {
+                  "name": "tipo_bateria",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "3349 mAh"
+                    }
+                  ]
+                },
+                {
+                  "name": "tipo_pantalla",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Super Retina XDR OLED"
+                    }
+                  ]
+                },
+                {
+                  "name": "tipo_sim",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1 Nano simcard (4ff) o 1 eSIM + 1 Nano simcard (4ff)"
+                    }
+                  ]
+                },
+                {
+                  "name": "ts_country_of_origin",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "China"
+                    }
+                  ]
+                },
+                {
+                  "name": "ts_packaging_type",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "None"
+                    }
+                  ]
+                },
+                {
+                  "name": "voz_4g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Soportado"
+                    }
+                  ]
+                },
+                {
+                  "name": "voz_wifi",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Soportado"
+                    }
+                  ]
+                },
+                {
+                  "name": "wifi",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "WiFi 6 - 802.11 a/b/g/n/ac/ax(6) (2.4GHz + 5GHz)"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_plp",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "dest_pantalla|dest_ram|dest_almacenamiento"
+                    }
+                  ]
+                },
+                {
+                  "name": "slogan_cuotas",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "*Hasta 24 cuotas sin interés con tu Tarjeta de Crédito"
+                    }
+                  ]
+                },
+                {
+                  "name": "campaign",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "no"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "child_sku": "001.002.2489",
+        "parent_sku": "A3090-128GB",
+        "graphql_data": {
+          "color": "Azul",
+          "storage": "128 GB",
+          "price": 999990,
+          "graphql_data": {
+            "id": "652e067b93a620666eac942a",
+            "name": "Apple iPhone 15 5G 128GB Azul",
+            "offerCode": "001.002.2489",
+            "lastUpdate": "2026-02-10T04:01:50.259Z",
+            "productOfferingPrice": {
+              "renew": {
+                "id": "6981732bdbbbdc4b994f1c2f",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "renew",
+                "includesInstallmentPlan": true,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aadaec3d60204b846cc24",
+                    "priceType": "salesInitialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 429990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aadaedbbbdc4b994f2996",
+                    "priceType": "salesInstallmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aadaec3d60204b846cc27",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 999990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aadaedbbbdc4b994f2999",
+                    "priceType": "initialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 579990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aadaec3d60204b846cc28",
+                    "priceType": "installmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aadaec3d60204b846cc29",
+                    "priceType": "salesPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 712800,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              },
+              "portIn": {
+                "id": "6981732bc3d60204b846bdff",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "portIn",
+                "includesInstallmentPlan": true,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aadaec3d60204b846cc25",
+                    "priceType": "initialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 429990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aadaedbbbdc4b994f2995",
+                    "priceType": "installmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aadaedbbbdc4b994f2998",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 712800,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              },
+              "newConnection": {
+                "id": "6981732bdbbbdc4b994f1c2d",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "newConnection",
+                "includesInstallmentPlan": true,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aadaedbbbdc4b994f2994",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 712800,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aadaec3d60204b846cc26",
+                    "priceType": "initialPrice",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 579990,
+                      "unit": "CLP"
+                    }
+                  },
+                  {
+                    "id": "698aadaedbbbdc4b994f2997",
+                    "priceType": "installmentPrice",
+                    "recurringChargePeriodLength": 18,
+                    "recurringChargePeriodType": "month",
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 33500,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              },
+              "standard": {
+                "id": "65d4233e329a806f0f3650fe",
+                "_type": "WOMCLInstallmentPaymentPlanOrPrice",
+                "salesScenario": "standard",
+                "includesInstallmentPlan": false,
+                "includesFullPrice": true,
+                "price": null,
+                "relatedPrice": [
+                  {
+                    "id": "698aadaec3d60204b846cc1d",
+                    "priceType": "price",
+                    "recurringChargePeriodLength": null,
+                    "recurringChargePeriodType": null,
+                    "_type": "WOMProductOfferingPrice",
+                    "price": {
+                      "value": 772800,
+                      "unit": "CLP"
+                    }
+                  }
+                ]
+              }
+            },
+            "productSpecification": {
+              "_type": "WOMCLGoodsProductSpecification",
+              "href": null,
+              "id": "652e05125b0a3d4fb1d8ce0a",
+              "name": "Apple iPhone 15 5G 128GB Azul",
+              "productNumber": "001.002.2489",
+              "productSpecCharacteristic": [
+                {
+                  "name": "categoria",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Equipos"
+                    }
+                  ]
+                },
+                {
+                  "name": "subcategoria",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Equipos"
+                    }
+                  ]
+                },
+                {
+                  "name": "meta_title",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Azul"
+                    }
+                  ]
+                },
+                {
+                  "name": "meta_keywords",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Azul"
+                    }
+                  ]
+                },
+                {
+                  "name": "meta_description",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Azul"
+                    }
+                  ]
+                },
+                {
+                  "name": "visibility",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Not Visible Individually"
+                    }
+                  ]
+                },
+                {
+                  "name": "price",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "999990"
+                    }
+                  ]
+                },
+                {
+                  "name": "name",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple iPhone 15 5G 128GB Azul"
+                    }
+                  ]
+                },
+                {
+                  "name": "product_type",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "simple"
+                    }
+                  ]
+                },
+                {
+                  "name": "almacenamiento_externo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "No Disponible"
+                    }
+                  ]
+                },
+                {
+                  "name": "bluetooth",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "5.3"
+                    }
+                  ]
+                },
+                {
+                  "name": "camara_frontal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "camara_principal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "48 + 12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "capacidad_almacenamiento",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "128 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "color",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Azul"
+                    }
+                  ]
+                },
+                {
+                  "name": "destacados",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "No"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_almacenamiento",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "128 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_camara_frontal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_camara_principal",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "48 + 12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "pantalla",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6.1\""
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_procesador",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "A16 Bionic"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_ram",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "standby_time",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Hasta 20 Horas"
+                    }
+                  ]
+                },
+                {
+                  "name": "duracion_reposo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Hasta 288 Horas"
+                    }
+                  ]
+                },
+                {
+                  "name": "flash",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Disponible en cámara principal"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_2g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "850 / 900 / 1800 / 1900 MHz"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_3g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "850 / 900 / 1700(AWS) / 1900 / 2100 MHz"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_4g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Banda 1(2100), 2(1900), 3(1800), 4(AWS), 5(850), 7(2600), 8(900), 12(700), 13(700), 17(700), 18(800), 19(800), 20(800), 25(1900), 26(850), 28(700), 30(2300), 32(1500), 66(AWS) (MHz)"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_5g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Bandas n1 (2100 MHz), n2(1900 MHz), n3 (1800 MHz), n5 (850 MHz), n7 (2600 MHz), n8 (900 MHz), n12 (700 MHz), n20 (800 MHz), n25 (1900+ MHz), n28 (700 MHz), n30 (2300 MHz), n38 (2600 MHz), n40 (2300 MHz), n41 (2600+ MHz), n48 (3.6 GHz),  n66 (AWS-3 1.7/2.1 GHz),n77 (3.7 GHz),  n78 (3.5 GHz), n79 (4.7 GHz)"
+                    }
+                  ]
+                },
+                {
+                  "name": "banda_sen_5g_nsa",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "DC_7A_n78A, DC_7A_n28A, DC_4A_n78A, DC_7A_n66A, DC_28A_n78A, DC_66A_n78A, DC_66A-66A_n78A"
+                    }
+                  ]
+                },
+                {
+                  "name": "gift_wrapping_available",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "No"
+                    }
+                  ]
+                },
+                {
+                  "name": "gps",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Yes"
+                    }
+                  ]
+                },
+                {
+                  "name": "grabacion_video",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "4k Ultra HD"
+                    }
+                  ]
+                },
+                {
+                  "name": "hotspot_tethering",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "vía USB - WiFi"
+                    }
+                  ]
+                },
+                {
+                  "name": "marca",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Apple"
+                    }
+                  ]
+                },
+                {
+                  "name": "memoria_ram",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6 GB"
+                    }
+                  ]
+                },
+                {
+                  "name": "peso_final",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "171 g"
+                    }
+                  ]
+                },
+                {
+                  "name": "procesador",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "A16 Bionic - CPU 6 Core - GPU 5 Core - Neuronal Engine 16 Core"
+                    }
+                  ]
+                },
+                {
+                  "name": "product_stock_alert",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Enable"
+                    }
+                  ]
+                },
+                {
+                  "name": "resolucion",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1179 x 2556 Pixeles"
+                    }
+                  ]
+                },
+                {
+                  "name": "sar_cabeza",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1.12 W/Kg"
+                    }
+                  ]
+                },
+                {
+                  "name": "sar_cuerpo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1.14 W/Kg"
+                    }
+                  ]
+                },
+                {
+                  "name": "sinc_carga",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "USB Tipo C"
+                    }
+                  ]
+                },
+                {
+                  "name": "operating_system",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "iOS 17"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_camara",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "48 + 12 MP"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_equipo",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "147.6 x 71.6 x 7.8 mm"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_pantalla",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6.1 Pulgadas"
+                    }
+                  ]
+                },
+                {
+                  "name": "tamano_pantalla_final",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "6.1 Pulgadas"
+                    }
+                  ]
+                },
+                {
+                  "name": "tipo_bateria",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "3349 mAh"
+                    }
+                  ]
+                },
+                {
+                  "name": "tipo_pantalla",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Super Retina XDR OLED"
+                    }
+                  ]
+                },
+                {
+                  "name": "tipo_sim",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "1 Nano simcard (4ff) o 1 eSIM + 1 Nano simcard (4ff)"
+                    }
+                  ]
+                },
+                {
+                  "name": "ts_country_of_origin",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "China"
+                    }
+                  ]
+                },
+                {
+                  "name": "ts_packaging_type",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "None"
+                    }
+                  ]
+                },
+                {
+                  "name": "voz_4g",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Soportado"
+                    }
+                  ]
+                },
+                {
+                  "name": "voz_wifi",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "Soportado"
+                    }
+                  ]
+                },
+                {
+                  "name": "wifi",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "WiFi 6 - 802.11 a/b/g/n/ac/ax(6) (2.4GHz + 5GHz)"
+                    }
+                  ]
+                },
+                {
+                  "name": "dest_plp",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "dest_pantalla|dest_ram|dest_almacenamiento"
+                    }
+                  ]
+                },
+                {
+                  "name": "slogan_cuotas",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "*Hasta 24 cuotas sin interés con tu Tarjeta de Crédito"
+                    }
+                  ]
+                },
+                {
+                  "name": "campaign",
+                  "productSpecCharacteristicValue": [
+                    {
+                      "value": "no"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "sku": "A3090-128GB"
+  }
+]

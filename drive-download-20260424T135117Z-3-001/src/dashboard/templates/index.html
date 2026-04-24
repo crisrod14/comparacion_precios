@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación de Precios - WOM Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --wom-primary: #e6007e;
+            --wom-dark: #1a1a2e;
+        }
+        body { background: #f8f9fa; font-family: 'Segoe UI', system-ui, sans-serif; }
+        .navbar { background: var(--wom-dark) !important; }
+        .navbar-brand { color: #fff !important; font-weight: 700; }
+        .btn-wom { background: var(--wom-primary); color: #fff; border: none; }
+        .btn-wom:hover { background: #c9006b; color: #fff; }
+        .card { border: none; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border-radius: 12px; }
+        .stat-card { padding: 1.5rem; }
+        .stat-card.ok { border-left: 4px solid #28a745; }
+        .stat-card.critica { border-left: 4px solid #dc3545; }
+        .stat-card.moderada { border-left: 4px solid #ffc107; }
+        .stat-card.no-encontrado { border-left: 4px solid #6c757d; }
+        .stat-card.filterable { cursor: pointer; transition: all 0.2s; }
+        .stat-card.filterable:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+        .stat-card.filterable.active { box-shadow: 0 0 0 2px var(--wom-primary); }
+        .table th { font-weight: 600; }
+        .badge-ok { background: #28a745; }
+        .badge-critica { background: #dc3545; }
+        .badge-moderada { background: #ffc107; color: #333; }
+        .badge-no-encontrado { background: #6c757d; }
+        .badge-nuevo { background: #17a2b8; }
+        #loading { display: none; }
+        .loading-spinner { margin: 2rem auto; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-graph-up-arrow me-2"></i>Revisión de Precios WOM
+            </a>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Comparación store.wom.cl vs Excel</h5>
+                        <p class="text-muted mb-3">
+                            Extrae precios del website y compara con tu archivo de referencia.
+                        </p>
+                        <button id="btnRun" class="btn btn-wom btn-lg">
+                            <i class="bi bi-play-fill me-2"></i>Ejecutar Comparación
+                        </button>
+                        <button id="btnAnalyze" class="btn btn-outline-secondary btn-lg ms-2">
+                            <i class="bi bi-file-earmark-spreadsheet me-2"></i>Analizar Excel
+                        </button>
+                        <a href="/api/debug-scrape" target="_blank" class="btn btn-outline-info btn-sm ms-2" title="Probar scraper (1 modalidad)">
+                            <i class="bi bi-bug me-1"></i>Debug scraper
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="card mb-4">
+            <div class="card-body text-center py-5">
+                <div class="spinner-border text-wom loading-spinner" role="status"></div>
+                <p class="mt-2">Extrayendo precios del website...</p>
+                <small class="text-muted">Usando API getGraphqlDataFromSkus para todas las modalidades. Matching por nombre completo.</small>
+            </div>
+        </div>
+
+        <div id="stats" class="row mb-4" style="display: none;">
+            <div class="col">
+                <div class="card stat-card filterable" data-filter="all" title="Click para filtrar">
+                    <h6 class="text-muted">SKUs únicos</h6>
+                    <h3 id="statSkusUnicos">0</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card stat-card ok filterable" data-filter="OK" title="Click para filtrar">
+                    <h6 class="text-muted">OK</h6>
+                    <h3 id="statOk">0</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card stat-card critica filterable" data-filter="CRITICA" title="Click para filtrar">
+                    <h6 class="text-muted">Críticas</h6>
+                    <h3 id="statCritica">0</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card stat-card moderada filterable" data-filter="MODERADA" title="Click para filtrar">
+                    <h6 class="text-muted">Moderadas</h6>
+                    <h3 id="statModerada">0</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card stat-card no-encontrado filterable" data-filter="NO_ENCONTRADO" title="Click para filtrar">
+                    <h6 class="text-muted">No encontrado</h6>
+                    <h3 id="statNoEncontrado">0</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card stat-card filterable" data-filter="NUEVO_EN_WEB" title="Click para filtrar">
+                    <h6 class="text-muted">Nuevos</h6>
+                    <h3 id="statNuevo">0</h3>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card stat-card critica filterable" data-filter="PRECIO_NORMAL_SIN_PRECIO" title="Click para filtrar">
+                    <h6 class="text-muted">Normal: Sin precio</h6>
+                    <h3 id="statSinPrecio">0</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultsSection" class="card" style="display: none;">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Resultados de la comparación</h5>
+                <a id="btnDownload" href="#" class="btn btn-sm btn-wom" style="display: none;">
+                    <i class="bi bi-download me-1"></i>Descargar Excel
+                </a>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive" style="max-height: 500px;">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light sticky-top">
+                            <tr id="resultsHeaders"></tr>
+                        </thead>
+                        <tbody id="resultsBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="analyzeSection" class="card mt-4" style="display: none;">
+            <div class="card-header">
+                <h5 class="mb-0">Estructura del Excel</h5>
+            </div>
+            <div class="card-body">
+                <div id="analyzeContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const btnRun = document.getElementById('btnRun');
+        const btnAnalyze = document.getElementById('btnAnalyze');
+        const loading = document.getElementById('loading');
+        const stats = document.getElementById('stats');
+        const resultsSection = document.getElementById('resultsSection');
+        const resultsBody = document.getElementById('resultsBody');
+        const btnDownload = document.getElementById('btnDownload');
+        const analyzeSection = document.getElementById('analyzeSection');
+        const analyzeContent = document.getElementById('analyzeContent');
+
+        function formatPrice(n) {
+            if (n == null) return '-';
+            return '$' + Number(n).toLocaleString('es-CL');
+        }
+
+        function setupFilterCards() {
+            document.querySelectorAll('.stat-card.filterable').forEach(card => {
+                card.onclick = () => {
+                    document.querySelectorAll('.stat-card.filterable').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    const filter = card.getAttribute('data-filter');
+                    document.querySelectorAll('#resultsBody tr').forEach(tr => {
+                        const peor = tr.getAttribute('data-peor-estado') || '';
+                        tr.style.display = (filter === 'all' || peor === filter) ? '' : 'none';
+                    });
+                };
+            });
+            document.querySelector('.stat-card.filterable[data-filter="all"]')?.classList.add('active');
+        }
+
+        function getStatusBadge(status) {
+            const cls = {
+                'OK': 'badge-ok',
+                'CRITICA': 'badge-critica',
+                'MODERADA': 'badge-moderada',
+                'NO_ENCONTRADO': 'badge-no-encontrado',
+                'NUEVO_EN_WEB': 'badge-nuevo',
+                'SIN_PRECIO_WEB': 'badge-no-encontrado',
+                'PRECIO_NORMAL_SIN_PRECIO': 'badge-critica'
+            }[status] || 'bg-secondary';
+            const label = status === 'PRECIO_NORMAL_SIN_PRECIO' ? 'Normal: Sin precio' : status;
+            return `<span class="badge ${cls}" title="${status}">${label}</span>`;
+        }
+
+        btnRun.addEventListener('click', async () => {
+            btnRun.disabled = true;
+            loading.style.display = 'block';
+            stats.style.display = 'none';
+            resultsSection.style.display = 'none';
+
+            try {
+                const res = await fetch('/api/run', { method: 'POST' });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Error al ejecutar');
+
+                document.getElementById('statSkusUnicos').textContent = data.stats.skus_unicos ?? data.stats.total;
+                document.getElementById('statOk').textContent = data.stats.ok;
+                document.getElementById('statCritica').textContent = data.stats.critica;
+                document.getElementById('statModerada').textContent = data.stats.moderada;
+                document.getElementById('statNoEncontrado').textContent = data.stats.no_encontrado;
+                document.getElementById('statNuevo').textContent = data.stats.nuevo;
+                document.getElementById('statSinPrecio').textContent = data.stats.precio_normal_sin_precio || 0;
+
+                const colLabels = {
+                    sku: 'SKU', producto: 'Producto', descuento_pct_ref: '% DCTO', resumen: 'Resumen', peor_estado: 'Peor estado', url: 'URL',
+                    mod_portabilidad: 'Portabilidad', mod_renovacion: 'Renovación', mod_linea_nueva: 'Línea nueva',
+                    mod_prepago: 'Prepago', mod_precio_normal: 'Precio normal'
+                };
+                const cols = data.results.length ? Object.keys(data.results[0]).filter(k => !k.startsWith('_')) : [];
+                const fixedOrder = ['sku','producto','descuento_pct_ref','mod_portabilidad','mod_renovacion','mod_linea_nueva','mod_prepago','mod_precio_normal','resumen','peor_estado','url'];
+                const orderedCols = fixedOrder.filter(c => cols.includes(c)).concat(cols.filter(c => !fixedOrder.includes(c)));
+                resultsHeaders.innerHTML = orderedCols.map(c => `<th>${colLabels[c] || c}</th>`).join('');
+                resultsBody.innerHTML = data.results.map(r => {
+                    const peor = r.peor_estado || '';
+                    return '<tr data-peor-estado="' + (peor || '') + '">' + orderedCols.map(c => {
+                        const v = r[c];
+                        let cell = '-';
+                        if (c === 'peor_estado' && v) cell = getStatusBadge(v);
+                        else if (c === 'url' && v) cell = `<a href="${v}" target="_blank">Ver</a>`;
+                        else if (c === 'descuento_pct_ref' && v != null && v !== '') cell = Number(v) + '%';
+                        else if (v != null && v !== '') cell = String(v);
+                        return '<td>' + cell + '</td>';
+                    }).join('') + '</tr>';
+                }).join('');
+
+                setupFilterCards();
+
+                const reportFile = data.report_path ? data.report_path.split(/[/\\]/).pop() : null;
+                if (reportFile) {
+                    btnDownload.href = '/api/download/' + reportFile;
+                    btnDownload.style.display = 'inline-block';
+                }
+
+                stats.style.display = 'flex';
+                resultsSection.style.display = 'block';
+            } catch (err) {
+                alert('Error: ' + err.message);
+            } finally {
+                btnRun.disabled = false;
+                loading.style.display = 'none';
+            }
+        });
+
+        btnAnalyze.addEventListener('click', async () => {
+            try {
+                const res = await fetch('/api/analyze');
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Error');
+
+                let html = '';
+                if (data.raw && data.raw.columns) {
+                    html += `
+                        <h6 class="text-primary">1. Estructura CRUDA del Excel (hoja Equipos)</h6>
+                        <p><strong>Columnas:</strong> ${data.raw.columns.join(', ')}</p>
+                        <p><strong>Filas:</strong> ${data.raw.rows_raw || 0}</p>
+                        <p class="text-muted small">Columnas de precios por modalidad: Equipo con Portabilidad, Equipo en Renovación, Precio Normal, etc.</p>
+                        <h6 class="mt-3">Muestra raw (primeros 5):</h6>
+                        <pre class="bg-light p-3 rounded small" style="max-height:200px;overflow:auto">${JSON.stringify(data.raw.sample_raw, null, 2)}</pre>
+                    `;
+                }
+                if (data.modality_map && data.modality_map.length) {
+                    html += `
+                        <h6 class="text-primary mt-4">2. Mapeo Excel → Modalidad</h6>
+                        <table class="table table-sm"><thead><tr><th>Columna Excel</th><th>Modalidad</th></tr></thead><tbody>
+                        ${data.modality_map.map(m => `<tr><td>${m.excel_column || '-'}</td><td><code>${m.modality_id || '-'}</code></td></tr>`).join('')}
+                        </tbody></table>
+                    `;
+                }
+                if (data.transformed) {
+                    const t = data.transformed;
+                    html += `
+                        <h6 class="text-primary mt-4">3. Datos transformados (para comparación)</h6>
+                        <p><strong>Columnas:</strong> ${(t.columns || []).join(', ')}</p>
+                        <p><strong>Filas equipos:</strong> ${t.rows || 0}</p>
+                        <p><strong>Modalidades:</strong> ${(t.modalities_used || []).join(', ') || '-'}</p>
+                        <h6 class="mt-3">Muestra transformada (primeros 15):</h6>
+                        <pre class="bg-light p-3 rounded small" style="max-height:250px;overflow:auto">${JSON.stringify(t.sample, null, 2)}</pre>
+                    `;
+                }
+                analyzeContent.innerHTML = html || '<p>Sin datos</p>';
+                analyzeSection.style.display = 'block';
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Streamlit (hosting gratuito)
+streamlit>=1.28.0
+
+# Data processing
+pandas>=2.2.0
+openpyxl>=3.1.0
+
+# Configuration
+pyyaml>=6.0.0
+
+# API requests (no Playwright necesario con method: api)
+requests>=2.31.0

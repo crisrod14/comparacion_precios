@@ -55,14 +55,8 @@ def compare_prices(
         if col not in web.columns:
             web[col] = '' if col in ('sku', 'name', 'modality') else None
 
-    def normalize_sku(s):
-        """Normaliza SKU removiendo espacios, puntos, guiones."""
-        s = str(s).strip().upper()
-        s = re.sub(r'[\s\.\-]', '', s)
-        return s
-
-    ref['sku'] = ref['sku'].astype(str).apply(normalize_sku)
-    web['sku'] = web['sku'].fillna('').astype(str).apply(normalize_sku)
+    ref['sku'] = ref['sku'].astype(str).str.strip().str.upper().str.replace(' ', '')
+    web['sku'] = web['sku'].fillna('').astype(str).str.strip().str.upper().str.replace(' ', '')
     if 'parent_sku' in web.columns:
         web['parent_sku'] = web['parent_sku'].fillna('').astype(str).str.strip().str.upper().str.replace(' ', '')
     else:
