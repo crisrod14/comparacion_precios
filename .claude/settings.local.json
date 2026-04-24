@@ -23,7 +23,8 @@
       "Bash(python3 scripts/update_skus_config.py \"Precios MOM Days.xlsx\")",
       "Bash(git commit -m 'Add script to auto-update SKUs in config.yaml from Excel *)",
       "Bash(git commit -m 'Auto-update config.yaml with new SKUs from Excel *)",
-      "Bash(git commit -m 'Switch to getList API endpoint for more reliable price fetching *)"
+      "Bash(git commit -m 'Switch to getList API endpoint for more reliable price fetching *)",
+      "Bash(git commit -m 'Use both APIs intelligently - getGraphqlDataFromSkus first, then getList fallback *)"
     ]
   }
 }
