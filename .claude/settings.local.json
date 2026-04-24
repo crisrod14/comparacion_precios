@@ -17,7 +17,8 @@
       "Bash(git commit -m 'Remove accessories API integration - focus on equipment comparison only *)",
       "Bash(git commit -m 'Restore streamlit_app.py to working version from drive *)",
       "Bash(git commit -m 'Improve SKU normalization to handle dots and dashes *)",
-      "Bash(git commit -m 'Extract SKUs from Excel instead of using hardcoded config list *)"
+      "Bash(git commit -m 'Extract SKUs from Excel instead of using hardcoded config list *)",
+      "Bash(git commit -m 'Combine configured SKUs with Excel SKUs *)"
     ]
   }
 }
