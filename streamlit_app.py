@@ -66,9 +66,13 @@ def run_comparison(excel_path: Path, config: dict) -> tuple[pd.DataFrame, dict]:
     )
     ref_df = ref_df[ref_df["modality"] != "accesorios"].copy()
 
+    # Extraer SKUs únicos del Excel en lugar de usar lista configurada
+    excel_skus = ref_df['sku'].dropna().unique().tolist()
+    excel_skus = [str(s).strip() for s in excel_skus if s]
+
     modalities = ["renovacion", "portabilidad", "linea_nueva", "prepago", "precio_normal"]
     web_df = fetch_products_from_api(
-        skus=api_skus,
+        skus=excel_skus,
         modalities=modalities,
         base_url=api_cfg.get("base_url", "https://store-srv.wom.cl/rest/V1/content"),
         connect_timeout=float(api_cfg.get("connect_timeout", 90)),
