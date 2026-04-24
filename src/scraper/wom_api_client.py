@@ -116,7 +116,9 @@ def _parse_child(child: dict, modality_id: str, parent_item: Optional[dict] = No
                 scenario_key = scenario
                 break
 
-        if modality_id == "prepago" and not product_offering.get("prepago"):
+        if modality_id == "accesorios":
+            scenario_key = "standard"
+        elif modality_id == "prepago" and not product_offering.get("prepago"):
             scenario_key = "standard"
 
         # Para precio_normal: usar "renew" si tiene price (tachado), sino "standard"

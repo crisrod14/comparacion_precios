@@ -10,7 +10,8 @@
       "Bash(git branch *)",
       "Bash(git pull *)",
       "Bash(git add *)",
-      "Bash(git commit -m 'Initial commit: Streamlit app for WOM store price comparison *)"
+      "Bash(git commit -m 'Initial commit: Streamlit app for WOM store price comparison *)",
+      "Bash(git push *)"
     ]
   }
 }

@@ -92,6 +92,7 @@ def read_csv_accessories(
             'sku': sku,
             'name': name,
             'price': price,
+            'modality': 'accesorios',
         }
 
         # Precio normal (sin descuento)
@@ -148,6 +149,7 @@ def get_csv_accessories(file_path: Union[str, Path]) -> pd.DataFrame:
             'sku': sku,
             'name': name,
             'price': price,
+            'modality': 'accesorios',
         }
 
         precio_normal = normalize_price(precio_normal_raw)
