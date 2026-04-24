@@ -24,7 +24,8 @@
       "Bash(git commit -m 'Add script to auto-update SKUs in config.yaml from Excel *)",
       "Bash(git commit -m 'Auto-update config.yaml with new SKUs from Excel *)",
       "Bash(git commit -m 'Switch to getList API endpoint for more reliable price fetching *)",
-      "Bash(git commit -m 'Use both APIs intelligently - getGraphqlDataFromSkus first, then getList fallback *)"
+      "Bash(git commit -m 'Use both APIs intelligently - getGraphqlDataFromSkus first, then getList fallback *)",
+      "Bash(git commit -m 'Preserve dots in SKU normalization *)"
     ]
   }
 }

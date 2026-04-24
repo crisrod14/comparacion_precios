@@ -56,9 +56,9 @@ def compare_prices(
             web[col] = '' if col in ('sku', 'name', 'modality') else None
 
     def normalize_sku(s):
-        """Normaliza SKU removiendo espacios, puntos, guiones."""
+        """Normaliza SKU: mayúsculas, elimina espacios pero preserva puntos."""
         s = str(s).strip().upper()
-        s = re.sub(r'[\s\.\-]', '', s)
+        s = re.sub(r'\s+', '', s)  # Solo elimina espacios, no puntos
         return s
 
     ref['sku'] = ref['sku'].astype(str).apply(normalize_sku)
