@@ -1,4 +1,4 @@
-# Revisión de precios — WOM Store
+# Revisión de precios 
 
 Compara precios de **store.wom.cl** (API) con un Excel de referencia.
 
