@@ -76,7 +76,7 @@ def run_comparison(excel_path: Path, config: dict, accessories_path: Optional[Pa
         estado_comercial=estado_comercial,
     )
 
-    # Agregar accesorios
+    # Agregar accesorios si se cargaron
     if accessories_path and accessories_path.exists():
         csv_accesorios = get_csv_accessories(accessories_path)
         if not csv_accesorios.empty:
@@ -84,17 +84,6 @@ def run_comparison(excel_path: Path, config: dict, accessories_path: Optional[Pa
             # Agregar SKUs únicos de accesorios a la consulta API (evitar duplicados)
             accessory_skus = csv_accesorios['sku'].unique().tolist()
             api_skus.extend([sku for sku in accessory_skus if sku not in api_skus])
-    else:
-        # Intentar leer desde archivo por defecto (backwards compatibility)
-        project_root = Path(__file__).resolve().parent
-        csv_accessories_path = project_root / "Precios MOM Days Accesorios.csv"
-        if csv_accessories_path.exists():
-            csv_accesorios = get_csv_accessories(csv_accessories_path)
-            if not csv_accesorios.empty:
-                ref_df = pd.concat([ref_df, csv_accesorios], ignore_index=True)
-                # Agregar SKUs únicos de accesorios a la consulta API (evitar duplicados)
-                accessory_skus = csv_accesorios['sku'].unique().tolist()
-                api_skus.extend([sku for sku in accessory_skus if sku not in api_skus])
 
     modalities = ["renovacion", "portabilidad", "linea_nueva", "prepago", "precio_normal"]
     web_df = fetch_products_from_api(
