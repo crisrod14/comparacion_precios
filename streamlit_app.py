@@ -124,6 +124,10 @@ def run_comparison(excel_path: Path, config: dict) -> tuple[pd.DataFrame, dict]:
         batch_size=int(api_cfg.get("batch_size", 10)),
         retries=int(api_cfg.get("retries", 5)),
     )
+
+    # Filtrar web_df también solo con formato XXX.XXX.XXXX
+    web_df = web_df[web_df['sku'].astype(str).str.match(sku_pattern)].copy()
+
     subset = (
         ["sku", "modality"]
         if "sku" in web_df.columns and web_df["sku"].notna().any()
