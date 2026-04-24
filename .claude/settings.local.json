@@ -18,7 +18,10 @@
       "Bash(git commit -m 'Restore streamlit_app.py to working version from drive *)",
       "Bash(git commit -m 'Improve SKU normalization to handle dots and dashes *)",
       "Bash(git commit -m 'Extract SKUs from Excel instead of using hardcoded config list *)",
-      "Bash(git commit -m 'Combine configured SKUs with Excel SKUs *)"
+      "Bash(git commit -m 'Combine configured SKUs with Excel SKUs *)",
+      "Bash(python3 scripts/update_skus_config.py \"Precios depurados.xlsx\")",
+      "Bash(python3 scripts/update_skus_config.py \"Precios MOM Days.xlsx\")",
+      "Bash(git commit -m 'Add script to auto-update SKUs in config.yaml from Excel *)"
     ]
   }
 }
