@@ -16,7 +16,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.data_sources.excel_reader import read_excel_reference
 from src.comparator.price_comparator import compare_prices, to_distinct_by_sku
-from src.scraper.wom_api_client import fetch_products_from_api
+from src.scraper.wom_api_client_v2 import fetch_products_from_api
 
 
 def update_config_with_excel_skus(excel_path: Path, config_path: Path):
